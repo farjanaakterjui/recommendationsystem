@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+        integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+   body {
+      border-radius: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background-position: center; 
+      background-color: #2f4353;
+      background-image: url("static/img/backgrounds/chu.jpg"); 
+
+    }
+/*animation start*/
+@function makelongshadow($length,$angle) {
+  $val: 0px 0px transparent;
+  @for $i from 1 through $length {
+    $val: #{$val}, #{$i}px #{$i*$angle}px #aaa;
+  }
+  @return $val;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+
+
+.txt {
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 12vmin;
+  font-weight: 700;
+  animation: netflix_style 3.5s infinite;
+  outline: none;
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+@keyframes netflix_style {
+  0% {
+   
+    color:whitesmoke;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    transform: scale(1.5, 1.5);
+  }
+  10% {
+
+    color:whitesmoke;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    transform: scale(1.5, 1.5);
+  }
+  15% {
+     color:whitesmoke;
+     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+  20% {    
+    color:whitesmoke;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+    transform: scale(1.1, 1.1);
+  }
+  75% {
+    opacity: 1;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+  80% {
+    opacity: 0;    
+    color:whitesmoke;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    transform: scale(0.85, 0.9);
+  }
+  
+  100% {
+    opacity: 0;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+}
+/*animation finish*/
+
+
+  </style>
+   <body>
+    
+     <div class="txt centered " contenteditable="true"> 
+      <h1  align="center"style='font-size:40px ; font-family: "Sofia"' >
+         <b><span>Movie Recommendation For You</span></b>
+      </h1></div>
+ 
+      <table border = 2 align="center" bgcolor="#ffffff" cellpadding="10">
+         {% for key, value in result.items() %}
+            <tr>
+               <th> {{ key }} </th>
+            </tr>
+         {% endfor %}
+         <br><br>
+      </table>
+
+   </body>
+</html>
